@@ -2,8 +2,10 @@ require 'logger'
 require 'fileutils'
 
 require 'dumpen/dumper'
+require 'dumpen/cleanup'
 require 'dumpen/mysqldump'
 require 'dumpen/pg_dumpall'
+
 
 class Dumpen
   LOG_FILENAMES = [
@@ -47,8 +49,9 @@ class Dumpen
 
     def run
       Dumpen.logger.info("Started dumpen")
-      Mysqldump.run(path)
-      PgDumpall.run(path)
+      Dumpen::Mysqldump.run(path)
+      Dumpen::PgDumpall.run(path)
+      Dumpen::Cleanup.run(path)
       Dumpen.logger.info("Done!")
     end
 
