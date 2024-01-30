@@ -32,6 +32,8 @@ class Dumpen
       Dumpen.logger.info("Dumping `#{filename}'")
       FileUtils.mkdir_p(filepath)
       system(command)
+    rescue Exception => e
+      warn "Failed to dump: #{e.message}"
     end
 
     def self.run(path)
