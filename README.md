@@ -24,4 +24,5 @@ By default it keeps backups around from the last two mondays and the entire prev
 
 ## So yeah…
 
-	./dumpen
+    ./dumpen
+    ./dumpen /var/lib/backups
