@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'fileutils'
 
 class Dumpen
+  # Superclass for a server specific class that writes SQL dumps to disk.
   class Dumper
     attr_reader :path
 
@@ -9,11 +12,11 @@ class Dumpen
     end
 
     def prefix
-      raise NoMethodError, "Not implemented by dumper subclass."
+      raise NoMethodError, 'Not implemented by dumper subclass.'
     end
 
     def command
-      raise NoMethodError, "Not implemented by dumper subclass."
+      raise NoMethodError, 'Not implemented by dumper subclass.'
     end
 
     def basename
