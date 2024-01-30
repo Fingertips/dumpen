@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class Dumpen
+  # Runs mysqldump to export all databases.
   class Mysqldump < Dumper
     def prefix
       'mysql'
