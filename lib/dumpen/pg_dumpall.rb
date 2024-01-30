@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class Dumpen
+  # Runs pg_dumpall to export all databases.
   class PgDumpall < Dumper
     def prefix
       'postgres'
